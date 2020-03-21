@@ -15,13 +15,13 @@
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/WebBackend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ZRWNmwe4zvWi3KcODbggcgJbNF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/views/dashboard" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -32,8 +32,10 @@
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\assets\css" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views" />
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views\dashboard" />
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\controllers\dashboard" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\helpers" />
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\controllers" />
     </key>
   </component>

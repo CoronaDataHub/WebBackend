@@ -42,10 +42,10 @@
 			<div class="menu-inner">
 				<nav>
 					<ul class="metismenu" id="menu">
-						<li>
+						<li class="active">
 							<a href="<?php echo base_url('dashboard/templates')?>" aria-expanded="true"><i class="ti-list"></i><span>Templates</span></a>
 						</li>
-						<li class="active">
+						<li>
 							<a href="<?php echo base_url('dashboard/contact')?>" aria-expanded="true"><i class="ti-book"></i><span>Kontakt</span></a>
 						</li>
 						<li>
@@ -62,53 +62,78 @@
 	<!-- inside -->
 	<div class="main-content">
 		<div class="col-lg-12 mt-10 text-center">
+			<br>
+			<h3 class="text-white text-left">API-Templates</h3>
 			<table class="table text-center">
 				<thead class="text-uppercase">
 				<tr class="">
-					<th scope="col">Datum</th>
-					<th scope="col">Name</th>
-					<th scope="col">E-Mail</th>
-					<th scope="col">Status</th>
+					<th scope="col">Type</th>
+					<th scope="col">Author</th>
+					<th scope="col">Aktion</th>
+				</tr>
+				</thead>
+				<tbody>
+				<?php foreach($templates as $template): ?>
+					<?php if($template['type'] == 'API') { ?>
+						<tr>
+							<th><?php echo $template['type'] ?></th>
+							<th><?php echo $template['author'] ?></th>
+							<th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#my_modal_<?php echo $template['id'];?>">Bearbeiten</button></th>
+						</tr>
+
+						<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="my_modal_<?php echo $template['id']; ?>">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Kontakt Anfrage #<?php echo $template['id']; ?></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<h6>Originalnachricht:</h6>
+										<?php echo $template['text'] ?>
+										<br>
+										<br>
+										<label for="answer">Antwort:</label>
+										<textarea class="form-control" id="answer" rows="3"></textarea>
+									</div>
+									<button type="button" class="btn btn-primary">Speichern</button>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+				<?php endforeach; ?>
+				</tbody>
+			</table>
+
+			<br>
+			<h3 class="text-white text-left">Contact-Templates</h3>
+			<table class="table text-center">
+				<thead class="text-uppercase">
+				<tr class="">
+					<th scope="col">Type</th>
+					<th scope="col">Author</th>
 					<th scope="col">Aktion</th>
 				</tr>
 				</thead>
 				<tbody>
 
-				<?php foreach($contactrequests as $contactrequest): ?>
-					<tr>
-						<th><?php echo date("d.m.Y", strtotime($contactrequest['date'])) ?></th>
-						<th><?php echo $contactrequest['name'] ?></th>
-						<th><?php echo $contactrequest['email'] ?></th>
-						<?php if($contactrequest['status']) { ?>
-							<th><button type="button" class="btn au-btn--green">Beantwortet</button></th>
-						<?php } else { ?>
-							<th><button type="button" class="btn btn-danger">Offen</button></th>
-						<?php } ?>
-						<th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#my_modal_<?php echo $contactrequest['id'];?>">Antworten</button></th>
-					</tr>
+				</tbody>
+			</table>
 
-					<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="my_modal_<?php echo $contactrequest['id']; ?>">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Kontakt Anfrage #<?php echo $contactrequest['id']; ?></h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									<h6>Originalnachricht:</h6>
-									<?php echo $contactrequest['text'] ?>
-									<br>
-									<br>
-									<label for="answer">Antwort:</label>
-									<textarea class="form-control" id="answer" rows="3"></textarea>
-								</div>
-								<button type="button" class="btn btn-primary">Antwort senden</button>
-							</div>
-						</div>
-					</div>
-				<?php endforeach; ?>
+			<br>
+			<h3 class="text-white text-left">Quellen-Templates</h3>
+			<table class="table text-center">
+				<thead class="text-uppercase">
+				<tr class="">
+					<th scope="col">Type</th>
+					<th scope="col">Author</th>
+					<th scope="col">Aktion</th>
+				</tr>
+				</thead>
+				<tbody>
+
 				</tbody>
 			</table>
 		</div>
