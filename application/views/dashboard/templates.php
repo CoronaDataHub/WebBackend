@@ -67,8 +67,9 @@
 			<table class="table text-center">
 				<thead class="text-uppercase">
 				<tr class="">
-					<th scope="col">Type</th>
+					<th scope="col">ID</th>
 					<th scope="col">Author</th>
+					<th scope="col">Nachricht</th>
 					<th scope="col">Aktion</th>
 				</tr>
 				</thead>
@@ -76,8 +77,9 @@
 				<?php foreach($templates as $template): ?>
 					<?php if($template['type'] == 'API') { ?>
 						<tr>
-							<th><?php echo $template['type'] ?></th>
+							<th><?php echo $template['id'] ?></th>
 							<th><?php echo $template['author'] ?></th>
+							<th><?php echo strip_tags(substr($template['text'], 0, 50)); ?></th>
 							<th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#my_modal_<?php echo $template['id'];?>">Bearbeiten</button></th>
 						</tr>
 
@@ -85,20 +87,21 @@
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLabel">Kontakt Anfrage #<?php echo $template['id']; ?></h5>
+										<h5 class="modal-title" id="exampleModalLabel">API-Template #<?php echo $template['id']; ?></h5>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
 									<div class="modal-body">
-										<h6>Originalnachricht:</h6>
-										<?php echo $template['text'] ?>
-										<br>
-										<br>
 										<label for="answer">Antwort:</label>
-										<textarea class="form-control" id="answer" rows="3"></textarea>
+										<textarea class="form-control" id="answer" rows="3"><?php echo $template['text']; ?></textarea>
 									</div>
-									<button type="button" class="btn btn-primary">Speichern</button>
+									<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
+									<br>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary mr-auto">Speichern</button>
+										<button type="button" class="btn btn-danger">Löschen</button>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -112,13 +115,46 @@
 			<table class="table text-center">
 				<thead class="text-uppercase">
 				<tr class="">
-					<th scope="col">Type</th>
+					<th scope="col">ID</th>
 					<th scope="col">Author</th>
+					<th scope="col">Nachricht</th>
 					<th scope="col">Aktion</th>
 				</tr>
 				</thead>
 				<tbody>
+				<?php foreach($templates as $template): ?>
+					<?php if($template['type'] == 'CONTACT') { ?>
+						<tr>
+							<th><?php echo $template['id'] ?></th>
+							<th><?php echo $template['author'] ?></th>
+							<th><?php echo strip_tags(substr($template['text'], 0, 50)); ?></th>
+							<th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#my_modal_<?php echo $template['id'];?>">Bearbeiten</button></th>
+						</tr>
 
+						<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="my_modal_<?php echo $template['id']; ?>">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Contact-Template #<?php echo $template['id']; ?></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<label for="answer">Antwort:</label>
+										<textarea class="form-control" id="answer" rows="3"><?php echo $template['text']; ?></textarea>
+									</div>
+									<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
+									<br>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary mr-auto">Speichern</button>
+										<button type="button" class="btn btn-danger">Löschen</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+				<?php endforeach; ?>
 				</tbody>
 			</table>
 
@@ -127,13 +163,46 @@
 			<table class="table text-center">
 				<thead class="text-uppercase">
 				<tr class="">
-					<th scope="col">Type</th>
+					<th scope="col">ID</th>
 					<th scope="col">Author</th>
+					<th scope="col">Nachricht</th>
 					<th scope="col">Aktion</th>
 				</tr>
 				</thead>
 				<tbody>
+				<?php foreach($templates as $template): ?>
+					<?php if($template['type'] == 'QUELLEN') { ?>
+						<tr>
+							<th><?php echo $template['id'] ?></th>
+							<th><?php echo $template['author'] ?></th>
+							<th><?php echo strip_tags(substr($template['text'], 0, 50)); ?></th>
+							<th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#my_modal_<?php echo $template['id'];?>">Bearbeiten</button></th>
+						</tr>
 
+						<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="my_modal_<?php echo $template['id']; ?>">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Quellen-Template #<?php echo $template['id']; ?></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<label for="answer">Antwort:</label>
+										<textarea class="form-control" id="answer" rows="3"><?php echo $template['text']; ?></textarea>
+									</div>
+									<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
+									<br>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary mr-auto">Speichern</button>
+										<button type="button" class="btn btn-danger">Löschen</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+				<?php endforeach; ?>
 				</tbody>
 			</table>
 		</div>
