@@ -92,16 +92,19 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
-									<div class="modal-body">
-										<label for="answer">Antwort:</label>
-										<textarea class="form-control" id="answer" rows="3"><?php echo $template['text']; ?></textarea>
-									</div>
-									<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
-									<br>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-primary mr-auto">Speichern</button>
-										<button type="button" class="btn btn-danger">Löschen</button>
-									</div>
+									<form action="" method="post">
+										<input type="hidden" name="id" value="<?php echo $template['id']; ?>">
+										<div class="modal-body">
+											<label for="answer">Antwort:</label>
+											<textarea class="form-control" id="answer" name="answer" rows="3"><?php echo $template['text']; ?></textarea>
+										</div>
+										<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
+										<br>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-primary mr-auto">Speichern</button>
+											<a href="<?php echo site_url() ?>dashboard/templates/delete/<?php echo $template['id'] ?>"><button type="button" class="btn btn-danger">Löschen</button></a>
+										</div>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -140,16 +143,19 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
-									<div class="modal-body">
-										<label for="answer">Antwort:</label>
-										<textarea class="form-control" id="answer" rows="3"><?php echo $template['text']; ?></textarea>
-									</div>
-									<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
-									<br>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-primary mr-auto">Speichern</button>
-										<button type="button" class="btn btn-danger">Löschen</button>
-									</div>
+									<form action="" method="post">
+										<input type="hidden" name="id" value="<?php echo $template['id']; ?>">
+										<div class="modal-body">
+											<label for="answer">Antwort:</label>
+											<textarea class="form-control" id="answer" name="answer" rows="3"><?php echo $template['text']; ?></textarea>
+										</div>
+										<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
+										<br>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-primary mr-auto">Speichern</button>
+											<a href="<?php echo site_url() ?>dashboard/templates/delete/<?php echo $template['id'] ?>"><button type="button" class="btn btn-danger">Löschen</button></a>
+										</div>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -188,16 +194,19 @@
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
-									<div class="modal-body">
-										<label for="answer">Antwort:</label>
-										<textarea class="form-control" id="answer" rows="3"><?php echo $template['text']; ?></textarea>
-									</div>
-									<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
-									<br>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-primary mr-auto">Speichern</button>
-										<button type="button" class="btn btn-danger">Löschen</button>
-									</div>
+									<form action="" method="post">
+										<input type="hidden" name="id" value="<?php echo $template['id']; ?>">
+										<div class="modal-body">
+											<label for="answer">Antwort:</label>
+											<textarea class="form-control" id="answer" name="answer" rows="3"><?php echo $template['text']; ?></textarea>
+										</div>
+										<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
+										<br>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-primary mr-auto">Speichern</button>
+											<a href="<?php echo site_url() ?>dashboard/templates/delete/<?php echo $template['id'] ?>"><button type="button" class="btn btn-danger">Löschen</button></a>
+										</div>
+									</form>
 								</div>
 							</div>
 						</div>
@@ -217,7 +226,7 @@
 							</button>
 						</div>
 						<div class="modal-body">
-							<label for="exampleFormControlSelect1">Type</label>
+							<label for="selectedtype">Type</label>
 							<select class="form-control" id="selectedtype">
 								<option>API</option>
 								<option>CONTENT</option>
