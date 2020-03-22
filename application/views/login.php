@@ -1,27 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
-	<link href="<?php echo base_url(); ?>assets/css/signin.css" rel="stylesheet" type="text/css" />
+	<meta charset="UTF-8">
+	<title>Corona-DataHub * Login</title>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/login.css">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
-<body class="text-center">
-<form class="form-signin" action="" method="post">
-	<?php if(isset($_SESSION['error'])) { ?>
-		<div class="alert alert-danger"><?php echo $_SESSION['error']; ?></div>
-	<?php } else if(isset($_SESSION['success'])) { ?>
-		<div class="alert alert-success"><?php echo $_SESSION['success']; ?></div>
-	<?php } ?>
-	<?php echo validation_errors('<div class="alert alert-danger">', '</div>');?>
-	<img class="mb-4" src="<?php echo base_url(); ?>assets/img/logo.png" alt="" width="100" height="100">
-	<h1 class="h3 mb-3 font-weight-normal">Admin Login</h1>
-	<label for="inputEmail" class="sr-only">E-Mail Address</label>
-	<input type="email" id="email" name="email" class="form-control" placeholder="E-Mail Address" required autofocus>
-	<label for="inputPassword" class="sr-only">Password</label>
-	<input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+<div class="wrapper fadeInDown">
+	<div id="formContent">
+		<!-- Tabs Titles -->
 
-	<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-	<p class="mt-5 mb-3 text-muted">&copy; Corona-DataHub.com 2020</p>
-</form>
-</body>
+		<!-- Icon -->
+		<div class="fadeIn first">
+			<img src="<?php echo base_url(); ?>assets/images/icon/logo-design.png" id="icon" alt="User Icon" />
+		</div>
+
+		<!-- Login Form -->
+		<form action="" method="post">
+			<?php if(isset($_SESSION['error'])) { ?>
+				<div class="alert alert-danger"><?php echo $_SESSION['error']; ?></div>
+			<?php } else if(isset($_SESSION['success'])) { ?>
+				<div class="alert alert-success"><?php echo $_SESSION['success']; ?></div>
+			<?php } ?>
+			<?php echo validation_errors('<div class="alert alert-danger">', '</div>');?>
+			<input type="text" id="email" name="email" class="form-control fadeIn second" placeholder="E-Mail Address">
+			<input type="password" id="password" name="password" class="form-control fadeIn third" placeholder="Password">
+			<input type="submit" class="fadeIn fourth" value="Log In">
+		</form>
+
+		<!-- Remind Passowrd -->
+	</div>
+</div>
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 </html>
