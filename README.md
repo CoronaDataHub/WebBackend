@@ -1,13 +1,16 @@
-#Corona-DataHub WebBackend
+Corona-DataHub WebBackend
+-
 
 This backend is for the Frontend in Angular.
 You can manage Contact, Sources and API-Requests in a small dashboard. The dashboard comes with a template system for the reponses. You can easily add and edit templates. 
 
-#Built With
+Built With
+-
 -  [CodeIgniter](https://codeigniter.com/) - The php framework used  
 -  MySQL
 
-#Placeholder examples
+Placeholder examples
+-
 
 - %EMAIL% - Get the email from the sender
 - %NAME% - Get the name from the sender
@@ -15,12 +18,14 @@ You can manage Contact, Sources and API-Requests in a small dashboard. The dashb
 - %DATE% - Get the date when the message was sent
 - %STATUS% - Get status bool (0 = not answered; 1 = answered)
 
-#Demo-Images
+Demo-Images
+-
 ![alt Template-Page](images/templates.jpg)
 
 ![alt template-example](images/template_select.jpg)
 
-#Contributors
+Contributors
+-
  - [Florian Z.](https://github.com/Gomze) - @theGomze  
  - [Nils G.](https://github.com/MrCodingMen) - @MrCodingMen  
  - [Julian H.](https://github.com/Newspicel) - @Newspicel  
