@@ -87,34 +87,37 @@
 						<th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#my_modal_<?php echo $apirequest['id'];?>">Antworten</button></th>
 					</tr>
 
-					<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="my_modal_<?php echo $apirequest['id']; ?>">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">API Request #<?php echo $apirequest['id']; ?></h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
+						<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="my_modal_<?php echo $apirequest['id']; ?>">
+							<div class="modal-dialog" role="document">
+								<?php echo validation_errors('<div class="alert alert-danger">', '</div>');?>
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">API Request #<?php echo $apirequest['id']; ?></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form action="" method="post">
+										<div class="modal-body">
+											<h6>Originalnachricht:</h6>
+											<?php echo $apirequest['text'] ?>
+											<br>
+											<br>
+											<label for="selectedtype">Template</label>
+											<select class="form-control" id="selectedtype" name="template" id="template">
+												<?php foreach($templates as $template): ?>
+													<option><?php echo $template['id']; ?></option>
+												<?php endforeach; ?>
+											</select>
+											<br>
+											<label for="textfield">API-Key</label>
+											<textarea class="form-control" name="apikey" id="apikey" rows="1"></textarea>
+										</div>
+										<button class="btn btn-lg btn-primary btn-block" href="#" type="submit">Antwort senden</button>
+									</form>
 								</div>
-								<div class="modal-body">
-									<h6>Originalnachricht:</h6>
-									<?php echo $apirequest['text'] ?>
-									<br>
-									<br>
-									<label for="selectedtype">Template</label>
-									<select class="form-control" id="selectedtype">
-										<?php foreach($templates as $template): ?>
-											<option><?php echo $template['id'].'-'.$template['type']; ?></option>
-										<?php endforeach; ?>
-									</select>
-									<br>
-									<label for="textfield">API-Key</label>
-									<textarea class="form-control" id="textfield" rows="1"></textarea>
-								</div>
-								<button type="button" class="btn btn-primary">Antwort senden</button>
 							</div>
 						</div>
-					</div>
 				<?php endforeach; ?>
 				</tbody>
 			</table>

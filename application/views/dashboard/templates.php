@@ -225,23 +225,24 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<div class="modal-body">
-							<label for="selectedtype">Type</label>
-							<select class="form-control" id="selectedtype">
-								<option>API</option>
-								<option>CONTENT</option>
-								<option>QUELLEN</option>
-							</select>
+						<form action="" method="post">
+							<div class="modal-body">
+								<label for="selectedtype">Type</label>
+								<select class="form-control" id="type" name="type">
+									<option>API</option>
+									<option>CONTENT</option>
+									<option>QUELLEN</option>
+								</select>
+								<br>
+								<label for="answer">Antwort:</label>
+								<textarea class="form-control" id="answer" name="answer" rows="3"></textarea>
+							</div>
+							<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
 							<br>
-							<label for="answer">Antwort:</label>
-							<textarea class="form-control" id="answer" rows="3"></textarea>
-						</div>
-						<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
-						<br>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary mr-auto">Speichern</button>
-							<button type="button" class="btn btn-danger">Löschen</button>
-						</div>
+							<div class="modal-footer">
+								<button type="submit" class="btn btn-primary mr-auto">Speichern</button>
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>

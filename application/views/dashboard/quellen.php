@@ -101,8 +101,12 @@
 									<?php echo $quellenrequest['text'] ?>
 									<br>
 									<br>
-									<label for="answer">Antwort:</label>
-									<textarea class="form-control" id="answer" rows="3"></textarea>
+									<label for="selectedtype">Template</label>
+									<select class="form-control" id="selectedtype">
+										<?php foreach($templates as $template): ?>
+											<option><?php echo $template['id'].'-'.$template['type']; ?></option>
+										<?php endforeach; ?>
+									</select>
 								</div>
 								<button type="button" class="btn btn-primary">Antwort senden</button>
 							</div>

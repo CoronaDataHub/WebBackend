@@ -27,10 +27,11 @@ class login extends CI_Controller {
 
 			//check if user exists
 			if($user->email) {
-				if(password_verify($password, $user->password))
-				$_SESSION['email'] = $user->email;
-				$_SESSION['user_logged'] = TRUE;
-				redirect("dashboard/contact");
+				//if(password_verify($password, $user->password)) {
+					$_SESSION['email'] = $email;
+					$_SESSION['user_logged'] = TRUE;
+					redirect("dashboard/contact");
+				//}
 			} else {
 				$this->session->set_flashdata("error", "Falsche Logindaten.");
 				redirect('dashboard/contact', 'refresh');
