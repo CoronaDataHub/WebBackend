@@ -17,26 +17,41 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/slick/fonts" />
+      <path value="$PROJECT_DIR$/vendor/font-awesome-5/css" />
+      <path value="$PROJECT_DIR$/vendor/font-awesome-5/webfonts" />
+      <path value="$PROJECT_DIR$/vendor/lightbox2/dist" />
+      <path value="$PROJECT_DIR$/vendor/lightbox2/src" />
+      <path value="$PROJECT_DIR$/vendor/font-awesome-4.7/css" />
+      <path value="$PROJECT_DIR$/vendor/fullcalendar-3.10.0/lib" />
+      <path value="$PROJECT_DIR$/vendor/font-awesome-4.7/fonts" />
+      <path value="$PROJECT_DIR$/vendor/fullcalendar-3.10.0/locale" />
+      <path value="$PROJECT_DIR$/vendor/mdi-font/css" />
+      <path value="$PROJECT_DIR$/vendor/mdi-font/fonts" />
+    </include_path>
+  </component>
   <component name="ProjectId" id="1ZRWNmwe4zvWi3KcODbggcgJbNF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/views/dashboard" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application/controllers/dashboard" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\controllers\dashboard" />
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\helpers" />
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views\dashboard" />
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views" />
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\assets\css" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\controllers\dashboard" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views\dashboard" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views" />
-      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\assets\css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views\dashboard" />
-      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\controllers\dashboard" />
-      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\helpers" />
-      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views" />
-      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\controllers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -63,6 +78,7 @@
       <updated>1584802348471</updated>
       <workItem from="1584802349644" duration="1339000" />
       <workItem from="1584805911293" duration="17116000" />
+      <workItem from="1584868600366" duration="13029000" />
     </task>
     <servers />
   </component>
@@ -74,7 +90,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

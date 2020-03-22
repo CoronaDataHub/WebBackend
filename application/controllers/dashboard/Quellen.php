@@ -10,9 +10,15 @@ class quellen extends CI_Controller {
 		}
 	}
 
-	public function index() {
+	public function index($mail='') {
 		$data['user'] = $this->session->userdata();
 		$data['quellenrequests'] = getRequests("quellen_requests");
+		$data['templates'] = getRequests('templates');
+
+		if(!empty($mail)) {
+			sendMail($data['user']['email'], "florian@zaskoku.com", "API Access @Corona-DataHub", getTemplate($mail));
+		}
+
 		$this->load->view('dashboard/quellen', $data);
 	}
 }
