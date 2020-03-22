@@ -25,6 +25,11 @@ class templates extends CI_Controller {
 			$answer = $_POST['answer'];
 			updateTemplate($id, $answer);
 			redirect('dashboard/templates');
+		} else if(!empty($_POST['type'])) {
+			$type = $_POST['type'];
+			$answer = $_POST['answer'];
+			addTemplate($type, $answer, $data['user']['email']);
+			redirect('dashboard/templates');
 		}
 
 		$this->load->view('dashboard/templates', $data);
