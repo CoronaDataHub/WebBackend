@@ -205,6 +205,37 @@
 				<?php endforeach; ?>
 				</tbody>
 			</table>
+			<br>
+			<button type="button" class="btn btn-primary" style="float: left;" data-toggle="modal" data-target="#my_modal_new_template">Template hinzufügen</button>
+			<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="my_modal_new_template">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Template hinzufügen</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<label for="exampleFormControlSelect1">Type</label>
+							<select class="form-control" id="selectedtype">
+								<option>API</option>
+								<option>CONTENT</option>
+								<option>QUELLEN</option>
+							</select>
+							<br>
+							<label for="answer">Antwort:</label>
+							<textarea class="form-control" id="answer" rows="3"></textarea>
+						</div>
+						<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
+						<br>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary mr-auto">Speichern</button>
+							<button type="button" class="btn btn-danger">Löschen</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

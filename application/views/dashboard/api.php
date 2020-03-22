@@ -91,7 +91,7 @@
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Kontakt Anfrage #<?php echo $apirequest['id']; ?></h5>
+									<h5 class="modal-title" id="exampleModalLabel">API Request #<?php echo $apirequest['id']; ?></h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
@@ -101,8 +101,15 @@
 									<?php echo $apirequest['text'] ?>
 									<br>
 									<br>
-									<label for="answer">Antwort:</label>
-									<textarea class="form-control" id="answer" rows="3"></textarea>
+									<label for="selectedtype">Template</label>
+									<select class="form-control" id="selectedtype">
+										<?php foreach($templates as $template): ?>
+											<option><?php echo $template['id'].'-'.$template['type']; ?></option>
+										<?php endforeach; ?>
+									</select>
+									<br>
+									<label for="textfield">API-Key</label>
+									<textarea class="form-control" id="textfield" rows="1"></textarea>
 								</div>
 								<button type="button" class="btn btn-primary">Antwort senden</button>
 							</div>
