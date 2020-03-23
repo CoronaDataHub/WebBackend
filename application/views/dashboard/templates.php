@@ -232,9 +232,9 @@
 							<div class="modal-body">
 								<label for="selectedtype">Type</label>
 								<select class="form-control" id="type" name="type">
-									<option>API</option>
-									<option>CONTENT</option>
-									<option>QUELLEN</option>
+									<?php foreach ($templatetypes as $templatetype) { ?>
+										<option><?php echo $templatetype['type'] ?></option>
+									<?php } ?>
 								</select>
 								<br>
 								<label for="answer">Antwort:</label>

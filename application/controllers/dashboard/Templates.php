@@ -13,6 +13,7 @@ class templates extends CI_Controller {
 	public function index($index='') {
 		$data['user'] = $this->session->userdata();
 		$data['templates'] = getRequests('templates');
+		$data['templatetypes'] = getTemplateTypes();
 
 		if(!empty($index)) {
 			$action = $this->uri->segment(3);

@@ -32,3 +32,13 @@ function addTemplate($type, $text, $author) {
 	);
 	$CI->db->insert('templates', $data);
 }
+
+function getTemplateTypes() {
+	$CI =& get_instance();
+	$CI->db->distinct();
+	$CI->db->select('type');
+	$CI->db->from('templates');
+	$query = $CI->db->get();
+
+	return array_reverse($query->result_array());
+}
