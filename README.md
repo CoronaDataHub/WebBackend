@@ -16,7 +16,7 @@ Placeholder examples
 - %NAME% - Get the name from the sender
 - %TEXT% - Get the text the sender sent
 - %DATE% - Get the date when the message was sent
-- %STATUS% - Get status bool (0 = not answered; 1 = answered)
+- %APIKEY% - Shows the API-Key which is provided in the form (Only API Requests)
 
 Demo-Images
 -

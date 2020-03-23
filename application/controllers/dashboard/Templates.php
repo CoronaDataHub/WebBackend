@@ -12,8 +12,8 @@ class templates extends CI_Controller {
 
 	public function index($index='') {
 		$data['user'] = $this->session->userdata();
-		$data['templates'] = getRequests('templates');
-		$data['templatetypes'] = getTemplateTypes();
+		$data['templates'] = getAllTemplates();
+		$data['templatetypes'] = array('API', 'CONTACT', 'QUELLEN');
 
 		if(!empty($index)) {
 			$action = $this->uri->segment(3);

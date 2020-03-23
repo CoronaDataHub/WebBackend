@@ -83,7 +83,7 @@
 						<th><?php echo $apirequest['name'] ?></th>
 						<th><?php echo $apirequest['email'] ?></th>
 						<?php if($apirequest['status']) { ?>
-							<th><button type="button" class="btn au-btn--green">Beantwortet</button></th>
+							<th><button type="button" class="btn btn-success">Beantwortet</button></th>
 						<?php } else { ?>
 							<th><button type="button" class="btn btn-danger">Offen</button></th>
 						<?php } ?>
@@ -102,12 +102,13 @@
 									</div>
 									<form action="" method="post">
 										<div class="modal-body">
+											<input type="hidden" name="requestid" value="<?php echo $apirequest['id']; ?>">
 											<h6>Originalnachricht:</h6>
 											<?php echo $apirequest['text'] ?>
 											<br>
 											<br>
 											<label for="selectedtype">Template</label>
-											<select class="form-control" id="selectedtype" name="template" id="template">
+											<select class="form-control" name="template" id="template">
 												<?php foreach($templates as $template): ?>
 													<?php if($template['type']=='API') { ?>
 														<option><?php echo $template['id']; ?></option>

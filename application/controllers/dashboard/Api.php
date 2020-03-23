@@ -12,14 +12,22 @@ class api extends CI_Controller {
 
 	public function index() {
 		$data['user'] = $this->session->userdata();
-		$data['apirequests'] = getRequests('api_requests');
-		$data['templates'] = getRequests('templates');
+		$data['apirequests'] = getRequests('API');
+		$data['templates'] = getTemplates('API');
 
 		if(!empty($_POST['apikey'])) {
 			$templateid = $_POST['template'];
 			$apikey = $_POST['apikey'];
+			$requestid = $_POST['requestid'];
 
-			sendMail('noreply@corona-datahub.com', "florian@zaskoku.com", "API Access @Corona-DataHub", /*getTemplate($mail)*/'test api');
+			sendMail('noreply@corona-datahub.com',
+				"florian@zaskoku.com",
+				"API Access",
+				str_replace("%APIKEY%", $apikey, getTemplate($templateid)->text),
+				$requestid);
+
+			changeStatus($requestid, '1');
+			redirect('dashboard/api');
 		}
 
 		$this->load->view('dashboard/api', $data);

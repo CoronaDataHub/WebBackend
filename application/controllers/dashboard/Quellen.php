@@ -12,13 +12,21 @@ class quellen extends CI_Controller {
 
 	public function index($mail='') {
 		$data['user'] = $this->session->userdata();
-		$data['quellenrequests'] = getRequests("quellen_requests");
-		$data['templates'] = getRequests('templates');
+		$data['quellenrequests'] = getRequests("QUELLEN");
+		$data['templates'] = getTemplates("QUELLEN");
 
 		if(!empty($_POST['template'])) {
 			$templateid = $_POST['template'];
+			$requestid = $_POST['requestid'];
 
-			sendMail('noreply@corona-datahub.com', "florian@zaskoku.com", "API Access @Corona-DataHub", /*getTemplate($mail)*/'test quellen');
+			sendMail('noreply@corona-datahub.com',
+				"florian@zaskoku.com",
+				"New Sources",
+				getTemplate($templateid)->text,
+				$requestid);
+
+			changeStatus($requestid, '1');
+			redirect('dashboard/quellen');
 		}
 
 		$this->load->view('dashboard/quellen', $data);

@@ -10,15 +10,23 @@ class contact extends CI_Controller {
 		}
 	}
 
-	public function index($mail='') {
+	public function index() {
 		$data['user'] = $this->session->userdata();
-		$data['contactrequests'] = getRequests('contact_requests');
-		$data['templates'] = getRequests('templates');
+		$data['contactrequests'] = getRequests('CONTACT');
+		$data['templates'] = getTemplates('CONTACT');
 
 		if(!empty($_POST['template'])) {
 			$templateid = $_POST['template'];
+			$requestid = $_POST['requestid'];
 
-			sendMail('noreply@corona-datahub.com', "florian@zaskoku.com", "API Access @Corona-DataHub", /*getTemplate($mail)*/'test contact');
+			sendMail('noreply@corona-datahub.com',
+				"florian@zaskoku.com",
+				"Contact",
+				getTemplate($templateid)->text,
+				$requestid);
+
+			changeStatus($requestid, '1');
+			redirect('dashboard/contact');
 		}
 
 		$this->load->view('dashboard/contact', $data);

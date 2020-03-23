@@ -11,6 +11,25 @@ function getTemplate($id) {
 	return $query->row();
 }
 
+function getTemplates($type) {
+	$CI =& get_instance();
+	$CI->db->select('*');
+	$CI->db->from('templates');
+	$CI->db->where(array('type' => $type));
+	$query = $CI->db->get();
+
+	return array_reverse($query->result_array());
+}
+
+function getAllTemplates() {
+	$CI =& get_instance();
+	$CI->db->select('*');
+	$CI->db->from('templates');
+	$query = $CI->db->get();
+
+	return array_reverse($query->result_array());
+}
+
 function deleteTemplate($id) {
 	$CI =& get_instance();
 	$CI->db->where('id', $id);
@@ -31,14 +50,4 @@ function addTemplate($type, $text, $author) {
 		'author'=>$author
 	);
 	$CI->db->insert('templates', $data);
-}
-
-function getTemplateTypes() {
-	$CI =& get_instance();
-	$CI->db->distinct();
-	$CI->db->select('type');
-	$CI->db->from('templates');
-	$query = $CI->db->get();
-
-	return array_reverse($query->result_array());
 }

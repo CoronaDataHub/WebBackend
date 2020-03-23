@@ -83,7 +83,7 @@
 						<th><?php echo $contactrequest['name'] ?></th>
 						<th><?php echo $contactrequest['email'] ?></th>
 						<?php if($contactrequest['status']) { ?>
-							<th><button type="button" class="btn au-btn--green">Beantwortet</button></th>
+							<th><button type="button" class="btn btn-success">Beantwortet</button></th>
 						<?php } else { ?>
 							<th><button type="button" class="btn btn-danger">Offen</button></th>
 						<?php } ?>
@@ -99,19 +99,22 @@
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>
-								<div class="modal-body">
-									<h6>Originalnachricht:</h6>
-									<?php echo $contactrequest['text'] ?>
-									<br>
-									<br>
-									<label for="selectedtype">Template</label>
-									<select class="form-control" id="selectedtype">
-										<?php foreach($templates as $template): ?>
-											<option><?php echo $template['id'].'-'.$template['type']; ?></option>
-										<?php endforeach; ?>
-									</select>
-								</div>
-								<button type="button" class="btn btn-primary">Antwort senden</button>
+								<form action="" method="post">
+									<div class="modal-body">
+										<input type="hidden" name="requestid" value="<?php echo $contactrequest['id']; ?>">
+										<h6>Originalnachricht:</h6>
+										<?php echo $contactrequest['text'] ?>
+										<br>
+										<br>
+										<label for="selectedtype">Template</label>
+										<select class="form-control" id="template" name="template">
+											<?php foreach($templates as $template): ?>
+												<option><?php echo $template['id']; ?></option>
+											<?php endforeach; ?>
+										</select>
+									</div>
+									<button type="submit" class="btn btn-primary">Antwort senden</button>
+								</form>
 							</div>
 						</div>
 					</div>
