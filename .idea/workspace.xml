@@ -36,7 +36,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../qr.catering" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -47,11 +47,11 @@
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\corona-datahub.com-backend" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views\dashboard" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\controllers\dashboard" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\helpers" />
       <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\views" />
-      <recent name="D:\xampp\htdocs\corona-datahub.com-backend\application\controllers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -79,7 +79,7 @@
       <workItem from="1584802349644" duration="1339000" />
       <workItem from="1584805911293" duration="17116000" />
       <workItem from="1584868600366" duration="14085000" />
-      <workItem from="1584961837094" duration="3279000" />
+      <workItem from="1584961837094" duration="4665000" />
     </task>
     <servers />
   </component>
