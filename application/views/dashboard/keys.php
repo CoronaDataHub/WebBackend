@@ -42,7 +42,7 @@
 			<div class="menu-inner">
 				<nav>
 					<ul class="metismenu" id="menu">
-						<li>
+						<li class="active">
 							<a href="<?php echo base_url('dashboard/keys')?>" aria-expanded="true"><i class="ti-list"></i><span>API-Keys</span></a>
 						</li>
 						<li>
@@ -54,7 +54,7 @@
 						<li>
 							<a href="<?php echo base_url('dashboard/api')?>" aria-expanded="true"><i class="ti-pie-chart"></i><span>API-Anfragen</span></a>
 						</li>
-						<li class="active">
+						<li>
 							<a href="<?php echo base_url('dashboard/quellen')?>" aria-expanded="true"><i class="ti-palette"></i><span>Quellen</span></a>
 						</li>
 					</ul>
@@ -77,44 +77,45 @@
 				</thead>
 				<tbody>
 
-				<?php foreach($quellenrequests as $quellenrequest): ?>
+				<?php foreach($apikeys as $apikey): ?>
 					<tr>
-						<th><?php echo date("d.m.Y", strtotime($quellenrequest['date'])) ?></th>
-						<th><?php echo $quellenrequest['name'] ?></th>
-						<th><?php echo $quellenrequest['email'] ?></th>
-						<?php if($quellenrequest['status']) { ?>
+						<th><?php echo date("d.m.Y", strtotime($apikey['date'])) ?></th>
+						<th><?php echo $apikey['name'] ?></th>
+						<th><?php echo $apikey['email'] ?></th>
+						<?php if($apikey['status']) { ?>
 							<th><button type="button" class="btn au-btn--green">Beantwortet</button></th>
 						<?php } else { ?>
 							<th><button type="button" class="btn btn-danger">Offen</button></th>
 						<?php } ?>
-						<th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#my_modal_<?php echo $quellenrequest['id'];?>">Antworten</button></th>
+						<th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#my_modal_<?php echo $apikey['id'];?>">Antworten</button></th>
 					</tr>
 
-					<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="my_modal_<?php echo $quellenrequest['id']; ?>">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Quellen Anfrage #<?php echo $quellenrequest['id']; ?></h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
+						<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="my_modal_<?php echo $apikey['id']; ?>">
+							<div class="modal-dialog" role="document">
+								<?php echo validation_errors('<div class="alert alert-danger">', '</div>');?>
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">API Request #<?php echo $apikey['id']; ?></h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form action="" method="post">
+										<div class="modal-body">
+											<h6>Originalnachricht:</h6>
+											<?php echo $apikey['text'] ?>
+											<br>
+											<br>
+											<label for="selectedtype">Template</label>
+											<br>
+											<label for="textfield">API-Key</label>
+											<textarea class="form-control" name="apikey" id="apikey" rows="1"></textarea>
+										</div>
+										<button class="btn btn-lg btn-primary btn-block" href="#" type="submit">Antwort senden</button>
+									</form>
 								</div>
-								<div class="modal-body">
-									<h6>Originalnachricht:</h6>
-									<?php echo $quellenrequest['text'] ?>
-									<br>
-									<br>
-									<label for="selectedtype">Template</label>
-									<select class="form-control" id="selectedtype">
-										<?php foreach($templates as $template): ?>
-											<option><?php echo $template['id'].'-'.$template['type']; ?></option>
-										<?php endforeach; ?>
-									</select>
-								</div>
-								<button type="button" class="btn btn-primary">Antwort senden</button>
 							</div>
 						</div>
-					</div>
 				<?php endforeach; ?>
 				</tbody>
 			</table>

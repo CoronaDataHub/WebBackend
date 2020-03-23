@@ -43,6 +43,9 @@
 				<nav>
 					<ul class="metismenu" id="menu">
 						<li>
+							<a href="<?php echo base_url('dashboard/keys')?>" aria-expanded="true"><i class="ti-list"></i><span>API-Keys</span></a>
+						</li>
+						<li>
 							<a href="<?php echo base_url('dashboard/templates')?>" aria-expanded="true"><i class="ti-list"></i><span>Templates</span></a>
 						</li>
 						<li>
