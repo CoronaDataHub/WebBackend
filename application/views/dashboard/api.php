@@ -109,7 +109,9 @@
 											<label for="selectedtype">Template</label>
 											<select class="form-control" id="selectedtype" name="template" id="template">
 												<?php foreach($templates as $template): ?>
-													<option><?php echo $template['id']; ?></option>
+													<?php if($template['type']=='API') { ?>
+														<option><?php echo $template['id']; ?></option>
+												<?php } ?>
 												<?php endforeach; ?>
 											</select>
 											<br>

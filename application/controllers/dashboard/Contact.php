@@ -15,8 +15,10 @@ class contact extends CI_Controller {
 		$data['contactrequests'] = getRequests('contact_requests');
 		$data['templates'] = getRequests('templates');
 
-		if(!empty($mail)) {
-			sendMail($data['user']['email'], "florian@zaskoku.com", "API Access @Corona-DataHub", getTemplate($mail));
+		if(!empty($_POST['template'])) {
+			$templateid = $_POST['template'];
+
+			sendMail('noreply@corona-datahub.com', "florian@zaskoku.com", "API Access @Corona-DataHub", /*getTemplate($mail)*/'test contact');
 		}
 
 		$this->load->view('dashboard/contact', $data);

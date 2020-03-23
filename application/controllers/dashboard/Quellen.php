@@ -15,8 +15,10 @@ class quellen extends CI_Controller {
 		$data['quellenrequests'] = getRequests("quellen_requests");
 		$data['templates'] = getRequests('templates');
 
-		if(!empty($mail)) {
-			sendMail($data['user']['email'], "florian@zaskoku.com", "API Access @Corona-DataHub", getTemplate($mail));
+		if(!empty($_POST['template'])) {
+			$templateid = $_POST['template'];
+
+			sendMail('noreply@corona-datahub.com', "florian@zaskoku.com", "API Access @Corona-DataHub", /*getTemplate($mail)*/'test quellen');
 		}
 
 		$this->load->view('dashboard/quellen', $data);
