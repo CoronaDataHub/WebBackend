@@ -29,7 +29,8 @@ class templates extends CI_Controller {
 		} else if(!empty($_POST['type'])) {
 			$type = $_POST['type'];
 			$answer = $_POST['answer'];
-			addTemplate($type, $answer, $data['user']['email']);
+			$templatename = $_POST['templatename'];
+			addTemplate($type, $answer, $templatename, $data['user']['email']);
 			redirect('dashboard/templates');
 		}
 

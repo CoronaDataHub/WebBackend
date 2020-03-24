@@ -42,11 +42,12 @@ function updateTemplate($id, $text) {
 	$CI->db->update('templates', array('text' => $text));
 }
 
-function addTemplate($type, $text, $author) {
+function addTemplate($type, $text, $templatename, $author) {
 	$CI =& get_instance();
 	$data = array(
 		'type'=>$type,
 		'text'=>$text,
+		'title'=>$templatename,
 		'author'=>$author
 	);
 	$CI->db->insert('templates', $data);

@@ -109,7 +109,7 @@
 										<label for="selectedtype">Template</label>
 										<select class="form-control" id="template" name="template">
 											<?php foreach($templates as $template): ?>
-												<option><?php echo $template['id']; ?></option>
+												<option><?php echo $template['title']; ?></option>
 											<?php endforeach; ?>
 										</select>
 									</div>

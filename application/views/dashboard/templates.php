@@ -73,6 +73,7 @@
 					<tr class="">
 						<th scope="col">ID</th>
 						<th scope="col">Author</th>
+						<th scope="col">Template-Name</th>
 						<th scope="col">Nachricht</th>
 						<th scope="col">Aktion</th>
 					</tr>
@@ -83,6 +84,7 @@
 							<tr>
 								<th><?php echo $template['id'] ?></th>
 								<th><?php echo $template['author'] ?></th>
+								<th><?php echo $template['title'] ?></th>
 								<th><?php echo strip_tags(substr($template['text'], 0, 50)); ?></th>
 								<th><button type="button" class="btn btn-info" data-toggle="modal" data-target="#my_modal_<?php echo $template['id'];?>">Bearbeiten</button></th>
 							</tr>
@@ -137,8 +139,11 @@
 									<?php } ?>
 								</select>
 								<br>
+								<label for="textfield">Template-Name</label>
+								<textarea class="form-control" name="templatename" id="templatename" rows="1"></textarea>
+								<br>
 								<label for="answer">Antwort:</label>
-								<textarea class="form-control" id="answer" name="answer" rows="3"></textarea>
+								<textarea class="form-control" id="answer" name="answer" rows="5"></textarea>
 							</div>
 							<h6>Eine Liste der Placeholder findest du in der <a href="https://github.com/CoronaDataHub/WebBackend/blob/master/README.md" target="_blank">README.</a></h6>
 							<br>
