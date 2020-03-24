@@ -16,14 +16,14 @@ class api extends CI_Controller {
 		$data['templates'] = getTemplates('API');
 
 		if(!empty($_POST['apikey'])) {
-			$templateid = $_POST['template'];
+			$templatetitle = $_POST['template'];
 			$apikey = $_POST['apikey'];
 			$requestid = $_POST['requestid'];
 
 			sendMail('noreply@corona-datahub.com',
 				"florian@zaskoku.com",
 				"API Access",
-				str_replace("%APIKEY%", $apikey, getTemplate($templateid)->text),
+				str_replace("%APIKEY%", $apikey, getTemplateByTitle($templatetitle)->text),
 				$requestid);
 
 			changeStatus($requestid, '1');

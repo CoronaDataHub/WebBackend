@@ -16,13 +16,13 @@ class contact extends CI_Controller {
 		$data['templates'] = getTemplates('CONTACT');
 
 		if(!empty($_POST['template'])) {
-			$templateid = $_POST['template'];
+			$templatetitle = $_POST['template'];
 			$requestid = $_POST['requestid'];
 
 			sendMail('noreply@corona-datahub.com',
 				"florian@zaskoku.com",
 				"Contact",
-				getTemplate($templateid)->text,
+				getTemplateByTitle($templatetitle),
 				$requestid);
 
 			changeStatus($requestid, '1');

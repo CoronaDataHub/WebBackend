@@ -16,13 +16,13 @@ class quellen extends CI_Controller {
 		$data['templates'] = getTemplates("QUELLEN");
 
 		if(!empty($_POST['template'])) {
-			$templateid = $_POST['template'];
+			$templatetitle = $_POST['template'];
 			$requestid = $_POST['requestid'];
 
 			sendMail('noreply@corona-datahub.com',
 				"florian@zaskoku.com",
 				"New Sources",
-				getTemplate($templateid)->text,
+				getTemplateByTitle($templatetitle),
 				$requestid);
 
 			changeStatus($requestid, '1');

@@ -11,6 +11,16 @@ function getTemplate($id) {
 	return $query->row();
 }
 
+function getTemplateByTitle($title) {
+	$CI =& get_instance();
+	$CI->db->select('*');
+	$CI->db->from('templates');
+	$CI->db->where(array('title' => $title));
+	$query = $CI->db->get();
+
+	return $query->row();
+}
+
 function getTemplates($type) {
 	$CI =& get_instance();
 	$CI->db->select('*');
